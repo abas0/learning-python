@@ -11,9 +11,23 @@ def analisar_caracter(c):
         else:
             string_aux.append(c[j])
     nova_stirng = ''.join(string_aux)
-    print(nova_stirng)
+    return nova_stirng
+
+
+def inverter_caracteres(c):
+    string_aux = []
+    for j in range(len(c) - 1, -1, -1):
+        string_aux.append(c[j])
+    nova_stirng = ''.join(string_aux)
+    return nova_stirng
+
+
+def ajustar_metade(c):
+    return 0
 
 
 for i in range(0, num):
     caracteres = input()
-    analisar_caracter(caracteres)
+    primeira_conversao = analisar_caracter(caracteres)
+    segunda_conversao = inverter_caracteres(primeira_conversao)
+    terceira_conversao = ajustar_metade(segunda_conversao)
