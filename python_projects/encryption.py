@@ -23,7 +23,20 @@ def inverter_caracteres(c):
 
 
 def ajustar_metade(c):
-    return 0
+    string_aux = []
+    if len(c)/2 % 2 != 0:
+        primeira_metade = c[:int(len(c) / 2) + 1]
+        segunda_metade = c[int(len(c) / 2) + 1:]
+    else:
+        primeira_metade = c[:int(len(c) / 2)]
+        segunda_metade = c[int(len(c) / 2):]
+
+    for j in range(0, len(segunda_metade)):
+        letra_ascii = ord(segunda_metade[j])
+        letra_ascii -= 1
+        string_aux.append(chr(letra_ascii))
+    nova_stirng = primeira_metade + ''.join(string_aux)
+    return nova_stirng
 
 
 for i in range(0, num):
@@ -31,3 +44,4 @@ for i in range(0, num):
     primeira_conversao = analisar_caracter(caracteres)
     segunda_conversao = inverter_caracteres(primeira_conversao)
     terceira_conversao = ajustar_metade(segunda_conversao)
+    print(terceira_conversao)
